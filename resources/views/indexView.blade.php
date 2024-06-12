@@ -28,7 +28,7 @@
                 </div>
                 <div class=" idiomas idiomas-icons">
                     <a href=""><i class="fas fa-envelope"></i> <i class="material-icons iconos">luggage</i>{{ __('Reserva') }}</a>
-                    {{ __('Prueba') }}
+                    
                     <i class="material-icons iconos">language</i>
                     <a href="{{ route('locale.set', 'es') }}"><i class="fab fa-facebook-f"></i>ES</a>
                     <a href="{{ route('locale.set', 'en') }}"><i class="fab fa-twitter"></i>EN</a>

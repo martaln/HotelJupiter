@@ -6,14 +6,10 @@
             <file>file:/var/www/hoteljupiter.es/resources/views/legalView.blade.php</file>
             <file>file:/var/www/hoteljupiter.es/public/css/estilo.css</file>
             <file>file:/var/www/hoteljupiter.es/resources/lang/es.json</file>
-            <file>file:/var/www/hoteljupiter.es/resources/views/serviciosView.blade.php</file>
             <file>file:/var/www/hoteljupiter.es/resources/views/reservasView.blade.php</file>
-            <file>file:/var/www/hoteljupiter.es/resources/views/galeriaView.blade.php</file>
-            <file>file:/var/www/hoteljupiter.es/app/Http/Middleware/SetLocale.php</file>
             <file>file:/var/www/hoteljupiter.es/resources/lang/en.json</file>
             <file>file:/var/www/hoteljupiter.es/public/js/script.js</file>
             <file>file:/var/www/hoteljupiter.es/resources/views/indexView.blade.php</file>
-            <file>file:/var/www/hoteljupiter.es/resources/views/habitacionesView.blade.php</file>
         </group>
     </open-files>
 </project-private>
