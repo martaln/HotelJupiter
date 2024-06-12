@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/hoteljupiter.es/resources/views/legalView.blade.php</file>
+            <file>file:/var/www/hoteljupiter.es/public/css/estilo.css</file>
+            <file>file:/var/www/hoteljupiter.es/resources/lang/es.json</file>
+            <file>file:/var/www/hoteljupiter.es/resources/views/serviciosView.blade.php</file>
+            <file>file:/var/www/hoteljupiter.es/resources/views/reservasView.blade.php</file>
+            <file>file:/var/www/hoteljupiter.es/resources/views/galeriaView.blade.php</file>
+            <file>file:/var/www/hoteljupiter.es/app/Http/Middleware/SetLocale.php</file>
+            <file>file:/var/www/hoteljupiter.es/resources/lang/en.json</file>
+            <file>file:/var/www/hoteljupiter.es/public/js/script.js</file>
+            <file>file:/var/www/hoteljupiter.es/resources/views/indexView.blade.php</file>
+            <file>file:/var/www/hoteljupiter.es/resources/views/habitacionesView.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
