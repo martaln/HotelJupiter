@@ -75,6 +75,7 @@
             </div>
         </div>
         <div class="container-fluid">
+            <!--Gym y eventos-->
             <div class="col-12">
                 <div class="photoser">
                     <img src="/imagenes/servicios/gym/gym1_1.jpg">
@@ -93,61 +94,96 @@
                     <p>{{ __('SalonesDescripcion') }}</p>
                 </div>
             </div>
-            <div class="divser text-center">
+            <!--Servicios seleccionables-->
+            <div  class="divser text-center">
                 <div>
                     <h2 class="h2principal">{{ __('EligeMayus') }}</h2>
                     <p>
                         {{ __('EligeMayusDescripcion') }}
                     </p>
                 </div>
-                <div class="row">
-
+                <div  id="servicom"class="row">
                     <div class="col-4" id="desayuno">
                         <img class="servicios" src="/imagenes/servicios/desayuno/desayuno1.jpg">
                         <h4>{{ __('Desayuno') }}</h4>
                         <p>{{ __('DesayunoDescripcion1') }} <br>
-                            {{ __('DesayunoDescripcion2') }} <br> S{{ __('DesayunoDescripcion3') }}</p>
+                            {{ __('DesayunoDescripcion2') }} <br> {{ __('DesayunoDescripcion3') }}</p>
                     </div>
                     <div class="col-4" id="parking">
                         <img class="servicios" src="/imagenes/servicios/parking.jpg">
                         <h4>{{ __('Parking') }}</h4>
-                        <p>{{ __('ParkingDescripcion') }}</p>
+                        <p class="pservicios">{{ __('ParkingDescripcion') }}</p>
                     </div>
                     <div class="col-4" id="romantico">
                         <img class="servicios" src="/imagenes/servicios/romantico.jpg">
                         <h4>{{ __('Romantica') }}</h4>
-                        <p>{{ __('RomanticaDescripcion') }}</p>
+                        <p class="pservicios">{{ __('RomanticaDescripcion') }}</p>
                     </div>
                 </div>
+            </div>
+            <!--Servicios generales-->
+            <div class="container text-center">
+                <div id="container_basicos" class="row">     
+                    <h2 class="col-12">{{ __('CadaEstancia') }}</h2>
+                    <div id="basicos" class="col-12">
+                        <div class="serbasicos col-4" >
+                            <i class="material-symbols-outlined">room_service</i>
+                            <p>{{ __('Recepcion') }}</p>
+                        </div>
+                        <div class="serbasicos col-4">
+                            <i class="material-symbols-outlined">luggage</i>
+                            <p>{{ __('Consigna') }} </p>
+                        </div>
+                        <div class="serbasicos col-4">
+                            <i class="material-symbols-outlined">check_in_out</i>
+                            <p>{{ __('EntradaHora') }} <br> {{ __('SalidaHora') }}</p>
+                        </div>
+                    </div>
+                    <div id="basicos" class="col-12">
+                        <div class="serbasicos col-4" >
+                            <i class="material-symbols-outlined">print</i>
+                            <p>{{ __('Copisteria') }} </p>
+                        </div>
+                        <div class="serbasicos col-4">
+                            <i class="material-symbols-outlined">concierge</i>
+                            <p>{{ __('RoomService') }}</p>
+                        </div>
+                        <div class="serbasicos col-4">
+                            <i class="material-symbols-outlined">local_laundry_service</i>
+                            <p>{{ __('Lavanderia') }}</p>
+                        </div>
 
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-    </body>
-     <footer>
-        <div class="container">
-            <div class="footer-logo col-5">
-                <img class="tamanologofooter" src="/imagenes/logo/logo.svg">
-            </div>
-            <div class="footer-contact col-4">
-                <h3>{{ __('Contactanos') }}</h3>
-                <ul>
-                    <li>{{ __('Telefono') }}: +34 123 456 789</li>
-                    <li>{{ __('Correo') }}: hoteljupiter@hoteljupiter.com</li>
-                    <li>{{ __('Direccion') }}: Calle Mar Menor, 5, 30010, Murcia, España</li>
-                </ul>
-            </div>
-            <div class="footer-dont-miss col-4">
-                <h3>{{ __('NoTePierdas') }}</h3>
-                <ul>
-                    <li><a href="habitaciones">{{ __('Habitaciones') }}</a></li>
-                    <li><a href="galeria">{{ __('Galeria') }}</a></li>
-                    <li><a href="reservas">{{ __('Reservas') }}</a></li>
-                    <li><a href="legal">{{ __('Legal') }}</a></li>
-                    <img class="cc" src="/imagenes/by-sa.svg">
-
-                </ul>
-            </div>
+</body>
+<footer>
+    <div class="container">
+        <div class="footer-logo col-5">
+            <img class="tamanologofooter" src="/imagenes/logo/logo.svg">
         </div>
-    </footer>
+        <div class="footer-contact col-4">
+            <h3>{{ __('Contactanos') }}</h3>
+            <ul>
+                <li>{{ __('Telefono') }}: +34 123 456 789</li>
+                <li>{{ __('Correo') }}: hoteljupiter@hoteljupiter.com</li>
+                <li>{{ __('Direccion') }}: Calle Mar Menor, 5, 30010, Murcia, España</li>
+            </ul>
+        </div>
+        <div class="footer-dont-miss col-4">
+            <h3>{{ __('NoTePierdas') }}</h3>
+            <ul>
+                <li><a href="habitaciones">{{ __('Habitaciones') }}</a></li>
+                <li><a href="galeria">{{ __('Galeria') }}</a></li>
+                <li><a href="reservas">{{ __('Reservas') }}</a></li>
+                <li><a href="legal">{{ __('Legal') }}</a></li>
+                <img class="cc" src="/imagenes/by-sa.svg">
+
+            </ul>
+        </div>
+    </div>
+</footer>
 </html>

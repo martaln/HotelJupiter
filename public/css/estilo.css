@@ -4,9 +4,12 @@
 
 
 /*PÁGINA PRINCIPAL - INICIO*/
+
 body,
 h2,
 h3,
+h4,
+h5,
 ul,
 li,
 p,
@@ -19,7 +22,8 @@ label {
 .col-6,
 .col-12,
 .col-4,
-.col-8 {
+.col-8,
+.col-3{
     padding: 0 !important;
 }
 
@@ -27,14 +31,12 @@ label {
 
 .containerinicio {
     display: flex;
-    /* Alinea los elementos hacia los extremos */
     align-items: center;
     text-align: right;
     max-width: 2000px;
     height: 2vh;
     margin: 0;
-    /* Ajusta el ancho máximo para centrar la barra */
-    padding-right: 15px;
+      padding-right: 15px;
     opacity: 0.7;
 }
 
@@ -55,7 +57,7 @@ label {
 
 .idiomas-icons a {
     color: #000000;
-    /* margin-left: 10px; */
+
 }
 
 .idiomas-icons a:hover {
@@ -136,7 +138,6 @@ label {
     text-align: center;
     color: white;
 
-    /* Color del texto */
 }
 
 .carousel-caption h1,
@@ -172,7 +173,6 @@ label {
 
 .estrellascarrusel {
     margin-bottom: -25px !important;
-    /* Ajusta este valor según lo necesites */
 }
 
 /*CUERPO PRINCIPAL*/
@@ -265,9 +265,14 @@ footer {
     width: auto;
 }
 
+.footer-contact{
+    margin-right: 5%;
+}
+
 .footer-contact,
 .footer-dont-miss {
     flex: 1 1 50%;
+
 }
 
 .footer-contact ul,
@@ -281,27 +286,16 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Añadido para aumentar la separación entre líneas */
+
 .footer-contact ul li,
 .footer-dont-miss ul li {
     margin-bottom: 8px;
 }
 
-/* Añadido para dar estilo a los enlaces */
+
 .footer-dont-miss ul li a {
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .footer-contact,
-    .footer-dont-miss {
-        margin-top: 20px;
-    }
 }
 
 .cc{
@@ -495,9 +489,12 @@ h3 {
 }
 
 /*servicios elegibles*/
+#servicom{
+    margin: 0;
+}
 .divser {
     margin-top: 5%;
-    background-color: #921c1c;
+    background-color: #870e0ecf;
     color: white;
 }
 
@@ -506,12 +503,45 @@ h3 {
     padding: 4%;
 }
 
+.pservicios{
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    overflow: hidden;
+}
 #desayuno p {
     padding-bottom: 4%;
 
 }
 
+/*Servicos generales*/
+#container_basicos{
+    box-shadow: -1px 1px 20px 10px rgba(0, 0, 0, 0.1);
+    background-color: #F7F8FA;
+    border: solid 1px #817214a8;
+    padding: 3%;
+    margin-top: 10%;
+}
+#container_basicos h2{
+      color: rgba(0, 0, 0, 0.7);
+}
 
+#basicos{
+    padding: 2% 0 2% 0 !important;
+    display: flex;
+}
+#basicos .material-symbols-outlined{
+    font-size: 50px;
+      color: rgba(0, 0, 0, 0.7);
+}
+#basicos p{
+    font-size: 20px;
+
+}
+.serbasicos{
+    color: rgba(0, 0, 0, 0.7);
+    
+
+}
 
 /*RESERVAS*/
 .wrapper {
@@ -625,13 +655,13 @@ h3 {
 }
 
 .linea-con-texto::before {
-    margin-right: 10px; /* Espacio entre la línea y el texto */
-    flex: 2; /* Ajusta este valor para acortar la línea */
+    margin-right: 10px; 
+    flex: 2; 
 }
 
 .linea-con-texto::after {
-    margin-left: 10px; /* Espacio entre la línea y el texto */
-    flex: 2; /* Ajusta este valor para acortar la línea */
+    margin-left: 10px; 
+    flex: 2; 
 }
 
 .iconosreserva img{
@@ -642,7 +672,7 @@ h3 {
 }
 
 .lineafinal{
-    width: 100%; /* Ajusta este valor para cambiar la longitud total de la línea sin texto */
+    width: 100%; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
 }
@@ -669,7 +699,7 @@ h3 {
 }
 
 #formulario label{
-   padding-bottom: 2% !important;
+    padding-bottom: 2% !important;
 }
 
 .formulario-group{
@@ -678,9 +708,40 @@ h3 {
     align-items: center;
 }
 
-/*#formulario1{
-    padding-top: 2%;
-}*/
+
+/*Resumen reservas*/
+
+#resumenReservaContainer {
+    box-shadow: -1px 1px 20px 10px rgba(0, 0, 0, 0.1);
+    background-color: #F7F8FA;
+    border: solid 1px #817214a8;
+    margin-bottom: 2%;
+    padding: 2% !important;
+    display: flex;
+
+}
+
+.horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+ 
+}
+
+#fechasResumen>div {
+    text-align: center;
+}
+
+#resumenTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#totalReserva {
+    color: rgb(26, 221, 26);
+    font-size: 30px;
+}
 
 .botonresf{
     padding: 18px 20px;
@@ -699,7 +760,7 @@ h3 {
 .centering-container {
     position: relative;
     width: 100%;
-    height: 70vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    height: 70vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -707,7 +768,7 @@ h3 {
 
 .divconfirmada{
 
-    /*    border: 1px solid black;*/
+ 
     box-shadow: -1px 1px 20px 10px rgba(0, 0, 0, 0.1);
     padding: 30px !important;
 
@@ -729,6 +790,11 @@ h3 {
     text-align: center;
 }
 
+.agotada{
+    color: red;
+    font-size: 30px;
+}
+
 .divlicencia{
-  text-align: center
+    text-align: center
 }

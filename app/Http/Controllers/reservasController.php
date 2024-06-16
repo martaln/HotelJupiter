@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class reservasController extends Controller {
 
@@ -27,16 +28,27 @@ class reservasController extends Controller {
         //Obtenemos la informacion de todas las habitaciones
         $habitaciones = DB::select("SELECT * FROM habitaciones;");
 
-        //Obtenemos las fecha de entrada y salida de las reservas
-        $reservas = DB::select("SELECT check_in, check_out FROM reservas_habitaciones;");
+        //Obtenemos las fechas de disponibilidad de las habitaciones
+        $disponibilidadHabitaciones = DB::select("SELECT * FROM disponibilidad_habitaciones;");
 
-        
+        $fechasOcupadas = [];
+
+        //Recorremos cada fecha para comprobar que dia no hay ninguna habitacion disponible y agregamos esa fecha al array fechasOcupadas
+        foreach ($disponibilidadHabitaciones as $registro) {
+            // Verificar si la suma de dbl_twin, trp y suite es 0
+            if ($registro->dbl_twin + $registro->trp + $registro->suite == 0) {
+                // Formatear la fecha y agregarla al array
+                $fechasOcupadas[] = date('Y-m-d', strtotime($registro->fecha));
+            }
+        }
+
+
         $fechas = "";
         //Comprobamos si hemos rellenado la fecha en el index
         if (isset($datos['fechas'])) {
             $fechas = $datos['fechas'];
         }
-        
+
         $numReserva = 0;
 
         //Comprobamos si nos viene relleno todo el formulario del usuario
@@ -58,8 +70,7 @@ class reservasController extends Controller {
             }
 
 
-            //Inserto la reserva de habitaciones
-
+            //Insertamos la reserva de habitaciones
             //Dividimos la fecha en dos
             $fechaCalendario = $datos['check_in_out'];
             // Reemplazamos '+-+' por una coma para facilitar la separación
@@ -85,7 +96,7 @@ class reservasController extends Controller {
                     $precioDesayuno = 0;
                     $precioParking = 0;
                     $precioRomantico = 0;
-                    
+
                     //Comprobamos si hemos seleccionado algun servicio y recuperamos el precio del servicio
                     if (isset($datos['desayuno' . $i])) {
                         $precioDesayuno += $datos['precioDesayunoHidden' . $i];
@@ -127,20 +138,42 @@ class reservasController extends Controller {
                     if (isset($datos['romantica' . $i])) {
                         DB::statement("INSERT INTO `reservas_servicios`(`ser_id`, `rh_id`) VALUES (" . $datos['romantica' . $i] . "," . $reservaId . ")");
                     }
+                    //Convertimos en formato fecha la fecha de entrada y salida
+                    $fechaEntradaFormat = new DateTime($fechaEntrada);
+                    $fechaSalidaFormat = new DateTime($fechaSalida);
+
+                    //Recorremos el rango de fechas
+                    while ($fechaEntradaFormat < $fechaSalidaFormat) {
+                        //Convertimos a formato año-mes-dias
+                        $fechaFormateada = $fechaEntradaFormat->format('Y-m-d');
+
+                        if ($datos['elegirhab' . $i] == 1) {
+                            $dblTwin = DB::select("SELECT dbl_twin FROM disponibilidad_habitaciones WHERE fecha = '" . $fechaFormateada . "'");
+                            DB::statement("UPDATE disponibilidad_habitaciones SET dbl_twin= " . $dblTwin[0]->dbl_twin - 1 . " WHERE fecha = '" . $fechaFormateada . "'");
+                        } else if ($datos['elegirhab' . $i] == 2) {
+                            $triple = DB::select("SELECT trp FROM disponibilidad_habitaciones WHERE fecha = '" . $fechaFormateada . "'");
+                            DB::statement("UPDATE disponibilidad_habitaciones SET trp= " . $triple[0]->trp - 1 . " WHERE fecha = '" . $fechaFormateada . "'");
+                        } else {
+                            $suite = DB::select("SELECT suite FROM disponibilidad_habitaciones WHERE fecha = '" . $fechaFormateada . "'");
+                            DB::statement("UPDATE disponibilidad_habitaciones SET suite= " . $suite[0]->suite - 1 . " WHERE fecha = '" . $fechaFormateada . "'");
+                        }
+                        $fechaEntradaFormat->modify('+1 day');
+                    }
                 }
             }
         }
 
         return view("reservasView")
                         ->with([
-                            "reservas" => $reservas,
+                            "fechasOcupadas" => $fechasOcupadas,
                             "fechasCalendario" => $fechasCalendario,
                             "habitaciones" => $habitaciones,
                             "fechas" => $fechas,
                             "precioParking" => $precioParking,
                             "precioRomantico" => $precioRomantico,
                             "precioDesayuno" => $precioDesayuno,
-                            "numReserva" => $numReserva
+                            "numReserva" => $numReserva,
+                            "disponibilidadHabitaciones" => $disponibilidadHabitaciones
         ]);
     }
 }

@@ -301,6 +301,7 @@
 
     </div>
 </body>
+<!--Footer-->
   <footer>
         <div class="container">
             <div class="footer-logo col-5">

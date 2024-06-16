@@ -67,6 +67,7 @@
                 </ul>
             </div>
         </nav>
+        <!--Cuerpo--> 
         <div class="container ">
             <div class="row">
                 <div class=" text-center col-12">
@@ -77,63 +78,57 @@
                     <div id="deed-body">
                         <div class="divlicencia">
                             <h1 class="" id="rights">
-                                Licencia
+                                {{ __('Licencia') }}
                             </h1>
                             <img src="/imagenes/by-sa.svg">
                         </div>
                         <br>
                         <h2 class="" id="rights">
-                            Usted es libre de:
+                            {{ __('Libre') }}
                         </h2>
                         <ol>
                             <li>
                                 <strong>
-                                    Compartir
+                                   {{ __('Compartir') }}
                                 </strong>
-                                — copiar y redistribuir el material en cualquier medio o formato
-                                para cualquier propósito, incluso comercialmente.
+                                — {{ __('Copiar') }}
                             </li>
                             <li>
                                 <strong>
-                                    Adaptar
+                                    {{ __('Adaptar') }}
                                 </strong>
-                                — remezclar, transformar y construir a partir del material
-                                para cualquier propósito, incluso comercialmente.
+                                — {{ __('Remezclar') }}
                             </li>
                             <li>
-                                La licenciante no puede revocar estas libertades en tanto usted siga los términos de la licencia
+                                {{ __('Nolibertades') }}
                             </li>
                         </ol>
                         <h2 id="terms">
-                            Bajo los siguientes términos:
+                           {{ __('Terminos') }}
                         </h2>
                         <ol>
                             <li class="cc-by">
                                 <strong>
-                                    Atribución
+                                   {{ __('Atribución') }}
                                 </strong>
                                 —
-                                Usted debe dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios. Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que usted o su uso tienen el apoyo de la licenciante.
+                               {{ __('Credito') }}
                             </li>
                             <li>
                                 <strong>
-                                    No hay restricciones adicionales
+                                   {{ __('Restricciones') }}
                                 </strong>
-                                — No puede aplicar términos legales ni medidas tecnológicas
-                                que restrinjan legalmente a otras a hacer cualquier uso permitido por la licencia.
+                                — {{ __('NoPuede') }}
                             </li>
                         </ol>
                         <h2 class="" style="font-weight: bold;">
-                            Avisos:
+                            {{ __('Avisos') }}
                         </h2>
                         <p>
-                            No tiene que cumplir con la licencia para elementos del materiale en el dominio público o cuando su uso esté permitido por una excepción o limitación
-                            aplicable.
+                            {{ __('NoTiene') }}
                         </p>
                         <p>
-                            No se dan garantías. La licencia podría no darle todos los permisos que necesita para el uso que tenga previsto. Por ejemplo, otros derechos como
-                            publicidad, privacidad, o derechos morales
-                            pueden limitar la forma en que utilice el material.
+                            {{ __('NoSeDan') }}
                         </p>
                     </div>
                 </div>

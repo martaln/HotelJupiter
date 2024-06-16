@@ -133,13 +133,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 //Mediante DOM se añade una habitacion nueva
-    function crearDetalleHabitacion(roomNumber) {
+  function crearDetalleHabitacion(roomNumber) {
         const detalleHabitacion = document.createElement("div");
-        detalleHabitacion.className = "row col-12";
         detalleHabitacion.id = `roomDetails${roomNumber}`;
         detalleHabitacion.innerHTML = `
             <div>
-                <h2>${window.translations.Habitacion} ${roomNumber}</h2>
+                <h2 class="habelegir">${window.translations.Habitacion} ${roomNumber}</h2>
             </div>
             <!-- ficha habitación double /twin -->
             <div class="habres row col-12" id="habitacionDobleContainer${roomNumber}">
@@ -184,6 +183,44 @@ document.addEventListener('DOMContentLoaded', function () {
                         <input type="hidden" class="precioHabitacionDobleHidden" id="precioHabitacionDobleHidden" name="precioHabitacionDobleHidden${roomNumber}" value="">
                         <label for="elegirhab">${window.translations.Elegir}</label>
                     </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- ficha habitación double /twin Agotada-->
+            <div class="habres row col-12" id="habitacionDobleContainerAgotada${roomNumber}" style="display: none;">
+                <!-- carruselhab -->
+                <div class="carouselhabres col-4">
+                    <div id="habitacionDoble${roomNumber}" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="imagenes/habitaciones/doble-twin/DBL1.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagenes/habitaciones/doble-twin/TWIN2.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#habitacionDoble${roomNumber}" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#habitacionDoble${roomNumber}" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="habnombre">
+                        <p>${window.translations.HabitacionDoble}</p>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <p class="centrarres agotada" id="#habitacionDobleAgotada${roomNumber}">Agotada</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,6 +270,45 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
             </div>
+        
+        <!-- ficha habitación triple Agotada-->
+            <div class="habres row col-12" id="habitacionSupletoriaContainerAgotada${roomNumber}" style="display: none;">
+                <!-- carruselhab -->
+                <div class="carouselhabres col-4">
+                    <div id="habitacionSupletoria${roomNumber}" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="imagenes/habitaciones/triple/TRIP2.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagenes/habitaciones/triple/aseo1.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#habitacionSupletoria${roomNumber}" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#habitacionSupletoria${roomNumber}" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="habnombre">
+                        <p>${window.translations.HabitacionSupletoria}</p>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <p class="centrarres agotada" id="#habitacionSupletoriaAgotada${roomNumber}">Agotada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
             <!-- ficha habitación suite -->
             <div class="habres row col-12" id="habitacionSuiteContainer${roomNumber}">
                 <!-- carruselhab -->
@@ -279,6 +355,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
             </div>
+        <!-- ficha habitación suite Agotada-->
+            <div class="habres row col-12" id="habitacionSuiteContainerAgotada${roomNumber}" style="display: none;">
+                <!-- carruselhab -->
+                <div class="carouselhabres col-4">
+                    <div id="habitacionSuite${roomNumber}" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="imagenes/habitaciones/suite/SUITE1.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagenes/habitaciones/suite/aseosuite.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#habitacionSuite${roomNumber}" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#habitacionSuite${roomNumber}" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="habnombre">
+                        <p>Suite</p>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <p class="centrarres agotada" id="habitacionSuiteAgotada${roomNumber}">Agotada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         `;
         return detalleHabitacion;
     }
@@ -286,7 +399,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //Mediante DOM se añaden los servicios para la nueva habitacion
     function crearNuevosServicios(roomNumber) {
         const detalleServicios = document.createElement("div");
-        detalleServicios.className = "row col-12";
         detalleServicios.id = `serviceDetails${roomNumber}`;
         detalleServicios.innerHTML = `
          <div id="subSection3">
@@ -382,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    /*Visualizar el tipo habitación segun el numero de personas seleccionadas*/
+    //Visualizar el tipo habitación segun el numero de personas seleccionadas
     function actualizarMostrarHabitacion(roomNumber, numPax) {
         const dobleContainer = document.getElementById(`habitacionDobleContainer${roomNumber}`);
         const supletoriaContainer = document.getElementById(`habitacionSupletoriaContainer${roomNumber}`);
@@ -484,6 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 calcularNoches(fechaCalendario.value);
                 calcularYActualizarNumeroTotalPersonas();
                 precioHabitaciones(fechaCalendario.value);
+                verificarDisponibilidad();
             }
 
             // Si la sección actual es 'section2', valida la selección de la habitación
@@ -518,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Verifica si el valor del calendario está vacío
         if (!fechaCalendario.value) {
             // Muestra una alerta solicitando que se seleccione una fecha
-            alert('Por favor, seleccione una fecha.');
+            alert(window.translations.AlertaFecha);
 
             // Evita que el formulario se envíe
             event.preventDefault();
@@ -546,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Si no hay ningún tipo de habitación seleccionada, muestra una alerta y retorna false
             if (!tipoHabitacionSeleccionada) {
-                alert(`Por favor, selecciona un tipo de habitación para la habitación ${numHabitacion}.`);
+                alert(`${window.translations.AlertaHab} ${numHabitacion}.`);
                 return false;
             }
         }
@@ -785,27 +898,108 @@ document.addEventListener('DOMContentLoaded', function () {
                 servicios.push(window.translations.Romantica);
                 precioServicios += parseInt(document.querySelector('input[name="precioRomanticoHidden').value);
             }
+            
 
             // Calcular el precio total de la reserva para esta habitación
             totalReserva += (parseInt(precioHabitacion) + precioServicios);
 
+            //Optener fechas de la reserva
+
+            const calendario = document.getElementById('calendario');
+            const fechas = calendario.value.split(' - '); // Dividir el valor del calendario en dos partes
+
+            const fechaEntrada = fechas[0];
+            const fechaSalida = fechas[1];
+
+            // Actualizar los elementos del DOM con las fechas extraídas
+            document.getElementById('fechaEntrada').textContent = fechaEntrada;
+            document.getElementById('fechaSalida').textContent = fechaSalida;
             // Crear un elemento div para mostrar el resumen de la habitación
             const roomResumen = document.createElement('div');
             // Establecer el contenido HTML del elemento div
-            roomResumen.innerHTML = `
-            <h4>Habitación ${numeroHabitacion}</h4>
-            <p>Tipo: ${nombreHabitacion}</p>
-            <p>Personas: ${numPersonas}</p>
-            <p>Precio Habitación: ${precioHabitacion}€</p>
-            <p>Servicios: ${servicios.join(', ')}</p>
-            <p>Precio servicios: ${precioServicios}€</p>
+            roomResumen.innerHTML = `<hr><h5>${window.translations.Habitacion}${numeroHabitacion}</h5>`;
+            const roomResumen1 = document.createElement('div');
+            // Establecer el contenido HTML del elemento div
+            roomResumen1.innerHTML = `
+            <p>${window.translations.Tipo}: ${nombreHabitacion}</p>
+            <p>${window.translations.Personas}: ${numPersonas}</p>
+            <p>${window.translations.PrecioHab}: ${precioHabitacion}€</p>
+            <p>${window.translations.Servicios}: ${servicios.join(', ')}</p>
+            <p>${window.translations.ServiciosPre}: ${precioServicios}€</p>
         `;
+            roomResumen1.classList.add('horizontal');
             // Agregar el elemento div al resumen de las habitaciones
             resumenHabitaciones.appendChild(roomResumen);
+                 resumenHabitaciones.appendChild(roomResumen1);
         });
 
         // Actualizar el total de la reserva en la interfaz
         document.getElementById('totalReserva').textContent = `${totalReserva}€`;
+        
     }
+    
+    function verificarDisponibilidad() {
+        
+        const calendarioInput = document.getElementById('calendario');
+        let rangoFechas = calendarioInput.value;
+        let fechas = rangoFechas.split(' - ');
+        let fechaInicio = convertirFecha(fechas[0]);
+        let fechaFin = convertirFecha(fechas[1]);
+
+        let dblTwinDisponible = true;
+        let trpDisponible = true;
+        let suiteDisponible = true;
+
+
+        disponibilidadHabitaciones.forEach(habitacion => {
+            let fecha = new Date(habitacion.fecha);
+            if (fecha >= fechaInicio && fecha <= fechaFin) {
+                if (habitacion[`dbl_twin`] === 0) {
+                    dblTwinDisponible = false;
+                }
+                if (habitacion[`trp`] === 0) {
+                    trpDisponible = false;
+                }
+                if (habitacion[`suite`] === 0) {
+                    suiteDisponible = false;
+                }
+
+            }
+        });
+
+        // Mostrar/Ocultar contenedores según disponibilidad
+        for (let i = 1; i <= 5; i++) {
+            const dobleContainer = document.getElementById(`habitacionDobleContainer${i}`);
+            const supletoriaContainer = document.getElementById(`habitacionSupletoriaContainer${i}`);
+            const suiteContainer = document.getElementById(`habitacionSuiteContainer${i}`);
+
+
+
+            if (dobleContainer != null && dobleContainer.style.display != 'none' && !dblTwinDisponible) {
+                $(`#habitacionDobleContainer${i}`).hide();
+                $(`#habitacionDobleContainerAgotada${i}`).show();
+            }
+
+            if (supletoriaContainer != null && supletoriaContainer.style.display != 'none' && !trpDisponible) {
+                $(`#habitacionSupletoriaContainer${i}`).hide();
+                $(`#habitacionSupletoriaContainerAgotada${i}`).show();
+            }
+
+            if (suiteContainer != null && suiteContainer.style.display != 'none' && !suiteDisponible) {
+                $(`#habitacionSuiteContainer${i}`).hide();
+                $(`#habitacionSuiteContainerAgotada${i}`).show();
+            }
+        }
+    }
+
+    function convertirFecha(fechaStr) {
+        const partes = fechaStr.split('-');
+        const dia = parseInt(partes[0], 10);
+        // Los meses en JS van de 0 a 11
+        const mes = parseInt(partes[1], 10) - 1;
+        const año = parseInt(partes[2], 10);
+        return new Date(año, mes, dia);
+    }
+
 
 });

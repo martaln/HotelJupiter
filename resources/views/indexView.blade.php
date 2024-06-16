@@ -28,7 +28,7 @@
                 </div>
                 <div class=" idiomas idiomas-icons">
                     <a href=""><i class="fas fa-envelope"></i> <i class="material-icons iconos">luggage</i>{{ __('Reserva') }}</a>
-                    
+
                     <i class="material-icons iconos">language</i>
                     <a href="{{ route('locale.set', 'es') }}"><i class="fab fa-facebook-f"></i>ES</a>
                     <a href="{{ route('locale.set', 'en') }}"><i class="fab fa-twitter"></i>EN</a>
@@ -110,8 +110,8 @@
                                                 <label for="fechaEntrada">{{ __('FechaEntrada') }}</label>
                                                 <!--Calendario-->
                                                 <div class="demo__input">
-                                                    <input type="text" id="calendario" placeholder="Seleccione una fecha" name="fechas" value="" aria-label="Check-in and check-out dates"
-                                                           aria-describedby="demo29-input-description" />
+                                                    <input type="text" id="calendario" placeholder="{{ __('SeleccionFecha') }}" name="fechas" value="" aria-label="Check-in and check-out dates"
+                                                           aria-describedby="demo29-input-description" autocomplete="off" />
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +131,42 @@
                 <script>
 // Parseando datos de PHP a JS
 let fechas = @json($fechas);
-        let reservasJs = @json($reservas);
+        let fechasOcupadas = @json($fechasOcupadas);
+window.translations = {
+CalendarSelected: @json(__('CalendarSelected')),
+        CalendarNight: @json(__('CalendarNight')),
+        CalendarNights: @json(__('CalendarNights')),
+        CalendarButton: @json(__('CalendarButton')),
+        CalendarClearButton: @json(__('CalendarClearButton')),
+        CalendarSubmitButton: @json(__('CalendarSubmitButton')),
+        CalendarCheckinDisabled: @json(__('CalendarCheckinDisabled')),
+        CalendarCheckoutDisabled: @json(__('CalendarCheckoutDisabled')),
+        CalendarDayNamesShort: @json(__('CalendarDayNamesShort')),
+        CalendarDayNames: @json(__('CalendarDayNames')),
+        CalendarMonthNamesShort: @json(__('CalendarMonthNamesShort')),
+        CalendarMonthNames: @json(__('CalendarMonthNames')),
+        CalendarErrorMore: @json(__('CalendarErrorMore')),
+        CalendarErrorMorePlural: @json(__('CalendarErrorMorePlural')),
+        CalendarErrorLess: @json(__('CalendarErrorLess')),
+        CalendarErrorLessPlural: @json(__('CalendarErrorLessPlural')),
+        CalendarInfoMore: @json(__('CalendarInfoMore')),
+        CalendarInfoMorePlural: @json(__('CalendarInfoMorePlural')),
+        CalendarInfoRange: @json(__('CalendarInfoRange')),
+        CalendarInfoRangeEqual: @json(__('CalendarInfoRangeEqual')),
+        CalendarInfoDefault: @json(__('CalendarInfoDefault')),
+        CalendarAriaApplication: @json(__('CalendarAriaApplication')),
+        CalendarAriaSelectedCheckin: @json(__('CalendarAriaSelectedCheckin')),
+        CalendarAriaSelectedCheckout: @json(__('CalendarAriaSelectedCheckout')),
+        CalendarAriaSelected: @json(__('CalendarAriaSelected')),
+        CalendarAriaDisabled: @json(__('CalendarAriaDisabled')),
+        CalendarAriaChooseCheckin: @json(__('CalendarAriaChooseCheckin')),
+        CalendarAriaChooseCheckout: @json(__('CalendarAriaChooseCheckout')),
+        CalendarAriaPrevMonth: @json(__('CalendarAriaPrevMonth')),
+        CalendarAriaNextMonth: @json(__('CalendarAriaNextMonth')),
+        CalendarAriaCloseButton: @json(__('CalendarAriaCloseButton')),
+        CalendarAriaClearButton: @json(__('CalendarAriaClearButton')),
+        CalendarAriaSubmitButton: @json(__('CalendarAriaSubmitButton')),
+}
                 </script>
                 <script src="/js/fecha.js"></script>
                 <script src="/js/hotel-datepicker.min.js"></script>
@@ -189,7 +224,7 @@ let fechas = @json($fechas);
                 <ul>
                     <li>{{ __('Telefono') }}: +34 123 456 789</li>
                     <li>{{ __('Correo') }}: hoteljupiter@hoteljupiter.com</li>
-                    <li>{{ __('Direccion') }}: Calle Mar Menor, 5, 30010, Murcia, España</li>
+                    <li>{{ __('Direccion') }}</li>
                 </ul>
             </div>
             <div class="footer-dont-miss col-4">
